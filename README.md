@@ -19,7 +19,7 @@ pip install -e .
 ```
 
 ## Dependencies
-Ensure you have the following dependencies installed:
+Make sure you have the following dependencies installed:
 - **schedule**: To schedule greeting messages.
 - **setuptools**: For package setup and installation.
 
@@ -33,7 +33,7 @@ Run the main script to send greetings:
 python main.py
 ```
 
-By default, greetings are sent at **8:00 AM** each day. You can adjust this in the script to test functionality more frequently.
+By default, greetings are sent at **8:00 AM** each day. You can adjust this in the script to test functionality more frequently. But in the main.py there is a commented section for test purposes where the messages are sent every 10 seconds instead of only 08:00 AM.
 
 ### Running for Testing Purposes
 Modify the schedule to send greetings every 10 seconds instead of daily:
