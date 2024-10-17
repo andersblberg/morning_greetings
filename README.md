@@ -70,16 +70,36 @@ python test.py
 The tests validate features like adding contacts, sending messages, and proper error handling.
 
 ## Project Structure
+The project has the following structure:
 
-- **main.py**: Main script to send greetings.
-- **morning_greetings/**: Package directory:
-  - **contacts.py**: Manages contact information.
-  - **contacts_manager.py**: Handles adding, removing, and fetching contacts.
-  - **message_generator.py**: Generates greeting messages.
-  - **message_sender.py**: Sends messages.
-  - **logger.py**: Logs sent messages.
+```
+morning_greetings/
+│   README.md
+│   setup.py
+│   main.py
+│   test.py
+│   message_log.txt
+│
+└───morning_greetings/
+    │   __init__.py
+    │   contacts.py
+    │   contacts_manager.py
+    │   logger.py
+    │   message_generator.py
+    │   message_sender.py
+```
+- **README.md**: Provides project overview, installation instructions, and usage.
+- **setup.py**: Configuration for installing the package.
+- **main.py**: Main script that schedules and sends greetings.
 - **test.py**: Unit tests for the project.
-- **message_log.txt**: Logs details of sent messages.
+- **message_log.txt**: Logs all sent messages.
+- **morning_greetings/**: Package directory containing the following modules:
+  - **__init__.py**: Indicates that this directory is a Python package.
+  - **contacts.py**: Manages individual contact data.
+  - **contacts_manager.py**: Handles adding, removing, and retrieving contacts.
+  - **logger.py**: Logs sent messages to a text file.
+  - **message_generator.py**: Generates personalized morning messages.
+  - **message_sender.py**: Sends the generated messages to contacts.
 
 ## Future Improvements
 - **Message Customization**: Support varied and personalized greeting templates.
