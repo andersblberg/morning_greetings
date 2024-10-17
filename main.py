@@ -13,8 +13,8 @@ def main():
         message = generate_message(name)
 
         try:
-            send_message(email, message)
             print(f"Sending message to {name}")
+            send_message(email, message)
             log_message(contact, message)  # This should log the message in message_log.txt
         except ValueError as e:
             print(f"Error: {e}")

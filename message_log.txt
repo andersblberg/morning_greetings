@@ -1,0 +1,3 @@
+2024-10-17 12:01:23.101654 - Sent to Alice (alice@example.com): Good Morning, Alice! Have a great day!
+2024-10-17 12:01:23.102653 - Sent to Bob (bob@example.com): Good Morning, Bob! Have a great day!
+2024-10-17 12:01:23.103658 - Sent to Charlie (charlie@example.com): Good Morning, Charlie! Have a great day!
