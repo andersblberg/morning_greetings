@@ -13,6 +13,15 @@ class Contacts:
         self.contacts.append(contact)
 
 def remove_contact(self, name):
+    """
+    Remove a contact by name from the contacts list.
+
+    Args:
+        name (str): The name of the contact to be removed.
+
+    Raises:
+        ValueError: If the contact with the specified name is not found.
+    """
     if not any(c['name'] == name for c in self.contacts):
         raise ValueError(f"Contact '{name}' not found.")
     self.contacts = [c for c in self.contacts if c['name'] != name]

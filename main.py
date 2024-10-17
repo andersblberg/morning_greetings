@@ -6,6 +6,9 @@ from morning_greetings.message_sender import send_message
 from morning_greetings.logger import log_message
 
 def send_morning_greetings():
+    """
+    Send personalized greetings to all contacts in the contact list.
+    """
     contacts_manager = ContactsManager()
     contacts = contacts_manager.get_contacts()
 
@@ -21,7 +24,7 @@ def send_morning_greetings():
         except ValueError as e:
             print(f"Error: {e}")
 
-"""
+
 
 # Schedule the greetings to be sent every day at 8:00 AM
 schedule.every().day.at("08:00").do(send_morning_greetings)
@@ -41,3 +44,4 @@ schedule.every(10).seconds.do(send_morning_greetings)
 while True:
     schedule.run_pending()
     time.sleep(5)
+"""

@@ -34,7 +34,7 @@ python main.py
 ```
 
 By default, greetings are sent at **8:00 AM** each day. You can adjust this in the script to test functionality more frequently. But in the main.py there is a commented section for test purposes where the messages are sent every 10 seconds instead of only 08:00 AM.
-### Running for **08:00 AM **
+### Running for 08:00 AM
 
 ```python
 # Schedule the greetings to be sent every day at 8:00 AM
