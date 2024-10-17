@@ -34,12 +34,30 @@ python main.py
 ```
 
 By default, greetings are sent at **8:00 AM** each day. You can adjust this in the script to test functionality more frequently. But in the main.py there is a commented section for test purposes where the messages are sent every 10 seconds instead of only 08:00 AM.
+### Running for **08:00 AM **
+
+```python
+# Schedule the greetings to be sent every day at 8:00 AM
+schedule.every().day.at("08:00").do(send_morning_greetings)
+
+# Keep the script running and checking the schedule
+while True:
+    schedule.run_pending()
+    time.sleep(60)
+```
 
 ### Running for Testing Purposes
 Modify the schedule to send greetings every 10 seconds instead of daily:
 
 ```python
+# Schedule the greetings to be sent every 10 seconds for test case
 schedule.every(10).seconds.do(send_morning_greetings)
+
+
+# Keep the script running and checking the schedule every 5 second for test case
+while True:
+    schedule.run_pending()
+    time.sleep(5)
 ```
 
 ## Running Tests
