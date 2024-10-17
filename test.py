@@ -1,28 +1,35 @@
 import unittest
-from morning_greetings.logger import log_message
+from morning_greetings.message_sender import send_message
+from morning_greetings.contacts_manager import ContactsManager
+from morning_greetings.message_generator import generate_message
 import os
 
-LOG_FILE_PATH = os.path.join(os.path.dirname(__file__), "message_log.txt")
+class TestMessageSender(unittest.TestCase):
+    def test_send_message_invalid_email(self):
+        with self.assertRaises(ValueError):
+            send_message("invalid-email", "Hello")
 
-class TestLogger(unittest.TestCase):
-    def test_log_message(self):
-        # Clear existing log if it exists for clean testing
-        if os.path.exists(LOG_FILE_PATH):
-            os.remove(LOG_FILE_PATH)
-        
-        contact = {'name': 'Alice', 'contact_info': 'alice@example.com', 'preferred_time': '08:00 AM'}
-        log_message(contact, "Good Morning, Alice")
+    def test_send_message_empty_message(self):
+        with self.assertRaises(ValueError):
+            send_message("test@example.com", "")
 
-        # Verify that the log entry was written to message_log.txt
-        with open(LOG_FILE_PATH, "r") as log_file:
-            logs = log_file.read()
-            self.assertIn("Alice", logs)
-            self.assertIn("Good Morning, Alice", logs)
+class TestContactsManager(unittest.TestCase):
+    def setUp(self):
+        # Backup and clear log file before each test
+        self.log_file_path = os.path.join(os.path.dirname(__file__), 'message_log.txt')
+        if os.path.exists(self.log_file_path):
+            os.rename(self.log_file_path, self.log_file_path + '.bak')
 
     def tearDown(self):
-        # Clean up log file after tests
-        if os.path.exists(LOG_FILE_PATH):
-            os.remove(LOG_FILE_PATH)
+        # Restore the original log file after each test
+        if os.path.exists(self.log_file_path + '.bak'):
+            os.rename(self.log_file_path + '.bak', self.log_file_path)
+
+    def test_add_contact(self):
+        manager = ContactsManager()
+        initial_count = len(manager.get_contacts())
+        manager.add_contact("Test User", "test@example.com", "08:00 AM")
+        self.assertEqual(len(manager.get_contacts()), initial_count + 1)
 
 if __name__ == "__main__":
     unittest.main()

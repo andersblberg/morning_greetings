@@ -4,7 +4,10 @@ setup(
     name='morning_greetings',
     version='0.1',
     packages=find_packages(),
-    install_requires=[],
+    install_requires=[
+        'schedule',  # For scheduling daily greetings
+        're',        # Regular expressions for email validation
+    ],
     entry_points={
         'console_scripts': [
             'morning_greetings = main:main',

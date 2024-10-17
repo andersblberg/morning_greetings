@@ -3,9 +3,9 @@
 class ContactsManager:
     def __init__(self):
         self.contacts = [
-            {"name": "Alice", "email": "alice@example.com", "preferred_time": "08:00 AM"},
-            {"name": "Bob", "email": "bob@example.com", "preferred_time": "09:00 AM"},
-            {"name": "Charlie", "email": "charlie@example.com", "preferred_time": "07:30 AM"}
+            {"name": "Bjarne", "email": "Bjarne@google.com", "preferred_time": "08:00 AM"},
+            {"name": "Kurt", "email": "Kurt@google.com", "preferred_time": "08:00 AM"},
+            {"name": "Rune", "email": "Rune@google.com", "preferred_time": "08:00 AM"}
         ]
 
     def add_contact(self, name, email, preferred_time="08:00 AM"):

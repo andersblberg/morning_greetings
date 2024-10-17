@@ -12,8 +12,10 @@ class Contacts:
         }
         self.contacts.append(contact)
 
-    def remove_contact(self, name):
-        self.contacts = [c for c in self.contacts if c['name'] != name]
+def remove_contact(self, name):
+    if not any(c['name'] == name for c in self.contacts):
+        raise ValueError(f"Contact '{name}' not found.")
+    self.contacts = [c for c in self.contacts if c['name'] != name]
 
     def get_contacts(self):
         return self.contacts
